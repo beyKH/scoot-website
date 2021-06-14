@@ -267,6 +267,7 @@ img {
 
 .heading {
   font-family: var(--heading-font);
+
 }
 
 .hero__info {
@@ -483,6 +484,8 @@ img {
 }
 
 .signup__heading {
+  margin-top: 0;
+  margin-bottom:0;
   color: var(--main-white);
   width: 415px;
   font-weight: bold;
@@ -493,11 +496,18 @@ img {
 
 }
 
+.signup__link{
+  text-decoration: none;
+  display: inline-block;
+}
+
 .signup__link:not(:last-child){
   margin-right: 18px;
 }
 
-.signup__img {}
+.signup__img {
+  display: block;
+}
 
 /* FOOTER */
 
