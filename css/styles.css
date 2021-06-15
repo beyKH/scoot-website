@@ -854,9 +854,13 @@ img {
 .faqs__item {
   background-color: var(--main-light-grey);
   padding: 32px 40px;
+  transition: height 0.5s ease, background-color 0.3s ease;
+
 }
 
-.faq {}
+.faqs__item:hover {
+  background-color: #FFF4DF;
+}
 
 .faq:not(:last-child) {
   margin-bottom: 16px;
@@ -869,9 +873,7 @@ img {
   justify-content: space-between;
 }
 
-.faq__top:hover{
-  color: var(--main-dim-grey);
-}
+
 
 .faq__question{
   margin-top: 0;
@@ -885,16 +887,17 @@ img {
 }
 
 .faq__button{
-  cursor: pointer;
   border: none;
   width: 20px;
   height: 10px;
   background-image: url("../img/arrow-down.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: transparent;
 }
 
 .faq__button::before{
+  cursor: pointer;
   position: absolute;
   z-index: 1;
   content: '';
@@ -908,22 +911,33 @@ img {
 
 .faq__answer{
   display: none;
+  /* height:10%; */
   margin-top: 24px;
   margin-bottom: 0;
   font-weight: normal;
   font-size: 15px;
   line-height: 25px;
   color:  #495567;
-  transition: opacity 0.5s ease;
 }
 
 
 .faq--active .faq__answer{
   display: block;
-  width: 100%;
+  height: 100%;
+  /* width: 100%; */
 }
 
+.faq--active{
+}
 
+.faq--active .faqs__item{
+  background-color: var(--main-light-grey);
+
+}
+
+.faq--active .faq__answer{
+  transition: height 0.3s ease;
+}
 .faq--active .faq__button{
   background-image: url("../img/arrow-up.png");
 }
