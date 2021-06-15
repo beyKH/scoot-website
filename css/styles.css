@@ -858,9 +858,6 @@ img {
 
 }
 
-.faqs__item:hover {
-  background-color: #FFF4DF;
-}
 
 .faq:not(:last-child) {
   margin-bottom: 16px;
@@ -927,12 +924,9 @@ img {
   /* width: 100%; */
 }
 
-.faq--active{
-}
 
-.faq--active .faqs__item{
-  background-color: var(--main-light-grey);
-
+.faqs__item:not(.faq--active):hover{
+  background-color: #FFF4DF;
 }
 
 .faq--active .faq__answer{
