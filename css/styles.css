@@ -759,6 +759,7 @@ img {
 .value {
 
   position: relative;
+  z-index: 1;
   padding-top: 37px;
   padding-left: 25px;
   padding-right: 25px;
@@ -774,8 +775,7 @@ img {
 
 .value__order{
   position: absolute;
-  top: calc(50% + 10px);
-  /* left: 50%; */
+  top: calc(50% - 10px);
   padding: 34px;
   color: var(--main-dark-navy);
   flex-shrink: 0;
@@ -908,7 +908,7 @@ img {
 
 .faq__answer{
   display: none;
-  /* height:10%; */
+  font-family: var(--heading-font);
   margin-top: 24px;
   margin-bottom: 0;
   font-weight: normal;
