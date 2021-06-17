@@ -208,6 +208,7 @@ img {
 }
 
 
+
 .hero__container {
   position: relative;
 }
@@ -476,6 +477,25 @@ img {
   background-repeat: no-repeat;
   background-position: calc(50% + 300px) calc(50% + 200px);
 }
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .signup {
+    background-image: url('../img/signup-bg@2x.png');
+  }
+  .hero{
+    background-image: url("../img/hero-bg@2x.png");
+  }
+
+
+}
+
 
 
 .signup__container {
@@ -855,9 +875,9 @@ img {
 
 .faqs__item {
   background-color: var(--main-light-grey);
-  padding: 32px 40px;
+  /* padding: 32px 40px; */
   transition: height 0.5s ease, background-color 0.3s ease;
-
+  /* padding-bottom: 32px   ; */
 }
 
 
@@ -866,6 +886,10 @@ img {
 }
 
 .faq__top{
+  padding-top: 32px ;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 32px;
   position: relative;
   display: flex;
   align-items: center;
@@ -907,11 +931,31 @@ img {
   cursor: pointer;
 }
 
+.faq__answer-box{
+  height: 0;
+  transition: all 0.3s ease;
+}
+
+
+.faq--active .faq__answer-box{
+  height: 100%;
+}
+
+
+.faq--active .faq__answer-box {
+
+  padding-bottom: 32px;
+}
+
+
 
 .faq__answer{
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 10px;
   display: none;
   font-family: var(--heading-font);
-  margin-top: 24px;
+  margin-top: 0;
   margin-bottom: 0;
   font-weight: normal;
   font-size: 15px;
@@ -926,13 +970,28 @@ img {
   /* width: 100%; */
 }
 
-
+/*
 .faqs__item:not(.faq--active):hover{
   background-color: #FFF4DF;
+} */
+
+.faqs__item:hover{
+  background-color: #fff4df;
+}
+
+
+
+.faq--active{
+
+  transition: all 0.3s ease;
+}
+
+.faq__answer-box{
+  transform: translateY(-20%);
 }
 
 .faq--active .faq__answer{
-  transition: height 0.3s ease;
+  transform: translateY(20%);
 }
 .faq--active .faq__button{
   background-image: url("../img/arrow-up.png");
@@ -982,10 +1041,61 @@ img {
 }
 
 .map__inner{
+  position: relative;
   height: 543px;
   width: 100%;
   margin-bottom: 120px;
 }
+
+.map__country {
+  position: absolute;
+  display: inline-block;
+  width: 120px;
+  height: 32px;
+  background-color: var(--main-yellow);
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 28px;
+  letter-spacing: -0.6px;
+  color: #495567;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map__country::after{
+  position: absolute;
+  top: 100%;
+  content: '';
+  display: block;
+  border: 8px solid var(--main-yellow);
+  border-top-color:var(--main-yellow) ;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.map__country--new-your {
+  top: 93px;
+  left: 235px;
+}
+
+.map__country--london {
+  top: 68px;
+  left: 432px;
+
+}
+
+.map__country--yokohoma {
+  top: 120px;
+  right: 100px;
+}
+
+.map__country--jakarta {
+  right: 174px;
+  bottom: 210px;
+}
+
 
 .map__img {
   display: block;
